@@ -50,7 +50,7 @@ std::list<Polygon> WeilerAtherton::process(const Polygon & in_subject, const Pol
             next = doWalk(entering_points, exiting_points, subj_points, next, pol);
             next = doWalk(entering_points, exiting_points, clip_points, next, pol);
         } while (next != start);
-        //enteringPoints.pop_front();
+
         result.push_back(pol);
     }
 
@@ -67,13 +67,11 @@ Point WeilerAtherton::doWalk(const std::list<Point>& enteringPoints, const std::
 			iter = walking_points.begin();
 		}
 
-		if (listContains<Point>(enteringPoints, *iter)) {
-			//enteringPoints.erase(it);
-			break;
-		}
+		//if (listContains<Point>(enteringPoints, *iter)) {
+		//	break;
+		//}
 		
 		if (listContains<Point>(exitingPoints, *iter)) {
-			//exitingPoints.erase(it);
 			break;
 		}
 	}
@@ -92,11 +90,11 @@ void WeilerAtherton::addPointInPlace(const Line& line, const IntersectionPoint& 
 	auto it = start;
 	double dist_from_start = distance(ip, *it);
 
-	while (it != end_line && it != list.end()) {		
+	while (it != end_line && it != list.end()) {
 		if (distance(*it, *start) >= dist_from_start) {
 			break;
 		}
-		it++;
+		++it;
 	}
 	list.insert(it, ip);
 }
