@@ -13,10 +13,10 @@ std::list<Polygon> WeilerAtherton::process(const Polygon & in_subject, const Pol
     if (subject.lines().size() < 3 || clipping.lines().size() < 3) {
         return result;
     }
+
     if (!subject.isClockwiseOriented()) {
         subject.reverse();
     }
-
     if (!clipping.isClockwiseOriented()) {
         clipping.reverse();
     }
@@ -42,10 +42,9 @@ std::list<Polygon> WeilerAtherton::process(const Polygon & in_subject, const Pol
         }
     }
 
-    auto iter_entering_points = entering_points.begin();
-    while (iter_entering_points != entering_points.end()) {
+    for (auto iter_entering_points = entering_points.begin(); iter_entering_points != entering_points.end(); ++iter_entering_points) {
         Polygon pol;
-        Point start = *iter_entering_points++, next = start;
+        Point start = *iter_entering_points, next = start;
 
         do {
             next = doWalk(entering_points, exiting_points, subj_points, next, pol);
@@ -63,7 +62,7 @@ Point WeilerAtherton::doWalk(const std::list<Point>& enteringPoints, const std::
 
 	while (true) {
 		pol.addPoint(*iter++);
-		
+
 		if (iter == walking_points.end()) { // simulate circular list
 			iter = walking_points.begin();
 		}
