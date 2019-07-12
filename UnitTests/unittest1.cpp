@@ -9,7 +9,7 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace WeilerAthertonAlgorithm;
 
-namespace UnitTests {		
+namespace UnitTests {
 	TEST_CLASS(UnitTest1) {
 	public:
 		

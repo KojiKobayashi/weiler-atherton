@@ -9,10 +9,6 @@ void Line::computeEquation() {
 	_c1 = _a1 * _A.x() + _b1 * _A.y();
 }
 
-Line::Line()
-{
-}
-
 Line::Line(const Point& A, const Point& B): _A(A), _B(B) {
 	computeEquation();
 }
@@ -63,8 +59,4 @@ IntersectionPoint Line::findIntersection(const Line& l) const {
 bool Line::isIntersecting(Line& b) const {
 	auto res = findIntersection(b);
 	return res.isValid();
-}
-
-Line::~Line()
-{
 }

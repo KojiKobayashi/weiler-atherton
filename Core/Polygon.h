@@ -9,8 +9,6 @@ namespace WeilerAthertonAlgorithm {
 		std::list<Point> _points;
 		std::list<Line> _lines;
 	public:
-		Polygon();
-		~Polygon();
 		bool isSelfIntersecting();
 		bool isClockwiseOriented();
 		void addPoint(Point p);

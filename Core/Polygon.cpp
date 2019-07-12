@@ -3,11 +3,6 @@
 
 using namespace WeilerAthertonAlgorithm;
 
-Polygon::Polygon() {}
-
-
-Polygon::~Polygon() {}
-
 bool Polygon::isSelfIntersecting() {
 	if (_points.size() < 4) {
 		return false;

@@ -6,11 +6,10 @@ namespace WeilerAthertonAlgorithm {
 		double _y;
 		//double max_double = std::numeric_limits<double>::max();
 	public:
-		double x() const;;
+        Point();
+        Point(double x, double y);
+		double x() const;
 		double y() const;
-		Point();
-		Point(double x, double y);
-		~Point();
 		bool operator==(const Point& p) const;
 		bool operator!=(const Point& p) const;
 	};

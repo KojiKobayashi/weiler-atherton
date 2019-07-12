@@ -2,12 +2,6 @@
 
 using namespace WeilerAthertonAlgorithm;
 
-WeilerAtherton::WeilerAtherton() {
-}
-
-WeilerAtherton::~WeilerAtherton() {
-}
-
 template <class T>
 bool listContains(std::list<T> list, T value) {
 	return std::find(list.begin(), list.end(), value) != list.end();

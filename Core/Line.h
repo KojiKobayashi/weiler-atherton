@@ -13,7 +13,6 @@ namespace WeilerAthertonAlgorithm {
 
 		void computeEquation();
 	public:
-		Line();
 		Line(const Point& A, const Point& B);
 		const Point& A() const;
 		const Point& B() const;
@@ -25,6 +24,5 @@ namespace WeilerAthertonAlgorithm {
 		bool operator !=(Line& l2) const;
 		IntersectionPoint findIntersection(const Line& b) const;
 		bool isIntersecting(Line& b) const;
-		~Line();
 	};
 }
