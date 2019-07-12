@@ -42,18 +42,17 @@ IntersectionPoint Line::findIntersection(const Line& l) const {
 	if (determinant == 0) {
 		return IntersectionPoint();
 	}
-	else {
-		double x = (b2 * _c1 - _b1 * c2) / determinant;
-		double y = (_a1 * c2 - a2 * _c1) / determinant;
 
-		// check if point belongs to segment
-		if (x < std::min(_A.x(), _B.x()) || x > std::max(_A.x(), _B.x())) return IntersectionPoint();
-		if (y < std::min(_A.y(), _B.y()) || y > std::max(_A.y(), _B.y())) return IntersectionPoint();
+	double x = (b2 * _c1 - _b1 * c2) / determinant;
+	double y = (_a1 * c2 - a2 * _c1) / determinant;
 
-		if (x < std::min(l.A().x(), l.B().x()) || x > std::max(l.A().x(), l.B().x())) return IntersectionPoint();
-		if (y < std::min(l.A().y(), l.B().y()) || y > std::max(l.A().y(), l.B().y())) return IntersectionPoint();
-		return IntersectionPoint(x, y, determinant > 0);
-	}
+	// check if point belongs to segment
+	if (x < std::min(_A.x(), _B.x()) || x > std::max(_A.x(), _B.x())) return IntersectionPoint();
+	if (y < std::min(_A.y(), _B.y()) || y > std::max(_A.y(), _B.y())) return IntersectionPoint();
+
+	if (x < std::min(l.A().x(), l.B().x()) || x > std::max(l.A().x(), l.B().x())) return IntersectionPoint();
+	if (y < std::min(l.A().y(), l.B().y()) || y > std::max(l.A().y(), l.B().y())) return IntersectionPoint();
+	return IntersectionPoint(x, y, determinant > 0);
 }
 
 bool Line::isIntersecting(const Line& b) const {

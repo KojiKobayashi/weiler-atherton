@@ -67,9 +67,9 @@ Point WeilerAtherton::doWalk(const std::list<Point>& enteringPoints, const std::
 			iter = walking_points.begin();
 		}
 
-		//if (listContains<Point>(enteringPoints, *iter)) {
-		//	break;
-		//}
+		if (listContains<Point>(enteringPoints, *iter)) {
+			break;
+		}
 		
 		if (listContains<Point>(exitingPoints, *iter)) {
 			break;

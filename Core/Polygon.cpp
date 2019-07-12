@@ -1,4 +1,3 @@
-#include <algorithm>
 #include "Polygon.h"
 
 using namespace WeilerAthertonAlgorithm;
@@ -22,7 +21,7 @@ bool Polygon::isSelfIntersecting() {
 
 bool Polygon::isClockwiseOriented() {
 	double sum = 0;
-	for (auto it_next = _points.begin(), it = it_next++; it_next != _points.end(); it++, it_next++) {
+	for (auto it_next = _points.begin(), it = it_next++; it_next != _points.end(); ++it, ++it_next) {
 		sum += (it_next->x() - it->x()) * (it_next->y() + it->y());
 	}
 	sum += (_points.front().x() - _points.back().x()) * (_points.front().y() + _points.back().y());
@@ -30,10 +29,10 @@ bool Polygon::isClockwiseOriented() {
 }
 
 void Polygon::addPoint(const Point p) {
-	if (_points.size()) {
-		if (_lines.size()) _lines.pop_back();
-		_lines.push_back(Line(_points.back(), p));
-		_lines.push_back(Line(p, _points.front()));
+	if (!_points.empty()) {
+		if (!_lines.empty()) _lines.pop_back();
+		_lines.emplace_back(_points.back(), p);
+		_lines.emplace_back(p, _points.front());
 	}
 	_points.push_back(p);
 }
@@ -41,11 +40,11 @@ void Polygon::addPoint(const Point p) {
 Point Polygon::deletePoint() {
 	Point tmp = _points.back();
 	_points.pop_back();
-	if (_lines.size()) _lines.pop_back(); // delete line from last point to first
-	if (_lines.size()) _lines.pop_back(); // delete prev line 
-	if (_points.size() > 1)
+	if (!_lines.empty()) _lines.pop_back(); // delete line from last point to first
+	if (!_lines.empty()) _lines.pop_back(); // delete prev line 
+	if (_points.size() > 1U)
 	// construct line from new last point to first
-		_lines.push_back(Line(_points.back(), _points.front()));
+		_lines.emplace_back(_points.back(), _points.front());
 	return tmp;
 }
 
