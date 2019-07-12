@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include "../Core/Line.h"
-#include "../Core/Point.h"
+#include "../WeilerAtherton/Line.h"
+#include "../WeilerAtherton/Point.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace WeilerAthertonAlgorithm;

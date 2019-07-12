@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include "../Core/Point.h"
-#include "../Core/Polygon.h"
+#include "../WeilerAtherton/Point.h"
+#include "../WeilerAtherton/Polygon.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace WeilerAthertonAlgorithm;

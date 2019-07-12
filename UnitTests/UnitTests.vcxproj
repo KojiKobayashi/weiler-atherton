@@ -160,7 +160,7 @@
     <ClCompile Include="WeilerAthertonTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.vcxproj">
+    <ProjectReference Include="..\WeilerAtherton\WeilerAtherton.vcxproj">
       <Project>{01c4c936-56e0-4ec5-b1fd-50d758e0ea09}</Project>
     </ProjectReference>
   </ItemGroup>
