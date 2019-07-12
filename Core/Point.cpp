@@ -1,6 +1,7 @@
 #include "Point.h"
 
-using namespace core;
+using namespace WeilerAthertonAlgorithm;
+
 double Point::x() const {
 	return _x;
 }

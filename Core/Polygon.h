@@ -4,7 +4,7 @@
 #include "Point.h"
 #include "Line.h"
 
-namespace core {
+namespace WeilerAthertonAlgorithm {
 	class Polygon {
 		std::list<Point> _points;
 		std::list<Line> _lines;

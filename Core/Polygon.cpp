@@ -1,7 +1,8 @@
 #include <algorithm>
 #include "Polygon.h"
 
-using namespace core;
+using namespace WeilerAthertonAlgorithm;
+
 Polygon::Polygon() {}
 
 

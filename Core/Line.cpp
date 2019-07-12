@@ -1,7 +1,8 @@
 #include "Line.h"
 #include <algorithm>
 
-using namespace core;
+using namespace WeilerAthertonAlgorithm;
+
 void Line::computeEquation() {
 	_a1 = _B.y() - _A.y();
 	_b1 = _A.x() - _B.x();

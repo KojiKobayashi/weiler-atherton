@@ -7,7 +7,7 @@
 #include "../Core/WeilerAtherton.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-using namespace core;
+using namespace WeilerAthertonAlgorithm;
 
 namespace UnitTests {		
 	TEST_CLASS(UnitTest1) {

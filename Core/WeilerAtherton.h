@@ -2,7 +2,7 @@
 
 #include "Polygon.h"
 
-namespace  core {
+namespace  WeilerAthertonAlgorithm {
 	class WeilerAtherton {
 	public:
 		WeilerAtherton();

@@ -1,9 +1,6 @@
 #pragma once
 
-#include <utility>	
-#include <memory>
-
-namespace core {
+namespace WeilerAthertonAlgorithm {
 	class Point	{
 		double _x;
 		double _y;

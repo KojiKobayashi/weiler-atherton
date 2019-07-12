@@ -1,9 +1,8 @@
 #pragma once
 
 #include "Point.h"
-#include <memory>
 
-namespace core {
+namespace WeilerAthertonAlgorithm {
 	class Line {
 		Point _A;
 		Point _B;

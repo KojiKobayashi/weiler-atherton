@@ -1,6 +1,7 @@
 #include "WeilerAtherton.h"
 
-using namespace core;
+using namespace WeilerAthertonAlgorithm;
+
 WeilerAtherton::WeilerAtherton() {
 }
 
