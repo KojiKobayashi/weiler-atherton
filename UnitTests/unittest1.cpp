@@ -22,7 +22,7 @@ namespace UnitTests {
 			Assert::IsTrue(line2.isIntersecting(line1));
 			Assert::AreEqual(Point(2, 2).x(), p.x());
 			Assert::AreEqual(Point(2, 2).y(), p.y());
-			Assert::IsTrue(p.isEntering());
+			Assert::IsFalse(p.isEntering());
 		}
 		TEST_METHOD(AddPolygonPoint) {
 			Polygon	p;

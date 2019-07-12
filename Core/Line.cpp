@@ -52,7 +52,7 @@ IntersectionPoint Line::findIntersection(const Line& l) const {
 
 		if (x < std::min(l.A().x(), l.B().x()) || x > std::max(l.A().x(), l.B().x())) return IntersectionPoint();
 		if (y < std::min(l.A().y(), l.B().y()) || y > std::max(l.A().y(), l.B().y())) return IntersectionPoint();
-		return IntersectionPoint(x, y, determinant < 0);
+		return IntersectionPoint(x, y, determinant > 0);
 	}
 }
 

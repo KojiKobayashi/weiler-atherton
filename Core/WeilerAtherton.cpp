@@ -88,8 +88,6 @@ std::list<Polygon> WeilerAtherton::process(Polygon & in_subject, Polygon & in_cl
 		}
 	}
 
-	entering_points.swap(exiting_points);
-
 	auto iter_entering_points = entering_points.begin();
 	while (iter_entering_points != entering_points.end()) {
 		Polygon pol;
