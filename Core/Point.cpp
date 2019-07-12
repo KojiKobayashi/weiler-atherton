@@ -4,7 +4,7 @@ using namespace WeilerAthertonAlgorithm;
 
 Point::Point() : _x(0), _y(0) {}
 
-Point::Point(double x, double y) : _x(x), _y(y) {}
+Point::Point(const double x, const double y) : _x(x), _y(y) {}
 
 double Point::x() const {
 	return _x;
@@ -25,10 +25,10 @@ bool Point::operator!=(const Point& p) const {
 IntersectionPoint::IntersectionPoint(): _entering(false), _isIntersectionPoint(false) {
 }
 
-IntersectionPoint::IntersectionPoint(double x, double y): Point(x, y), _entering(false), _isIntersectionPoint(false) {
+IntersectionPoint::IntersectionPoint(const double x, const double y): Point(x, y), _entering(false), _isIntersectionPoint(false) {
 }
 
-IntersectionPoint::IntersectionPoint(double x, double y, bool isEntering): Point(x, y), _entering(isEntering), _isIntersectionPoint(true) {
+IntersectionPoint::IntersectionPoint(const double x, const double y, const bool isEntering): Point(x, y), _entering(isEntering), _isIntersectionPoint(true) {
 }
 
 bool IntersectionPoint::isEntering() const {

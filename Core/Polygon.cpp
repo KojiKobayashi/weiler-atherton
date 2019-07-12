@@ -20,7 +20,7 @@ bool Polygon::isSelfIntersecting() {
 	return false;
 }
 
-bool Polygon::isClockwiseOriented() {	
+bool Polygon::isClockwiseOriented() {
 	double sum = 0;
 	for (auto it_next = _points.begin(), it = it_next++; it_next != _points.end(); it++, it_next++) {
 		sum += (it_next->x() - it->x()) * (it_next->y() + it->y());
@@ -29,7 +29,7 @@ bool Polygon::isClockwiseOriented() {
 	return sum > 0;
 }
 
-void Polygon::addPoint(Point p) {
+void Polygon::addPoint(const Point p) {
 	if (_points.size()) {
 		if (_lines.size()) _lines.pop_back();
 		_lines.push_back(Line(_points.back(), p));

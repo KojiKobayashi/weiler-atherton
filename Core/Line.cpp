@@ -13,17 +13,17 @@ Line::Line(const Point& A, const Point& B): _A(A), _B(B) {
 	computeEquation();
 }
 
-Line::Line(double x1, double y1, double x2, double y2) {
+Line::Line(const double x1, const double y1, const double x2, const double y2) {
 	_A = Point(x1, y1);
 	_B = Point(x2, y2);
 	computeEquation();
 }
 
-bool Line::operator==(Line& l2) const {
+bool Line::operator==(const Line& l2) const {
 	return _A == l2.A() && _B == l2.B();
 }
 
-bool Line::operator!=(Line& l2) const {
+bool Line::operator!=(const Line& l2) const {
 	return !(*this == l2);
 }
 
@@ -56,7 +56,7 @@ IntersectionPoint Line::findIntersection(const Line& l) const {
 	}
 }
 
-bool Line::isIntersecting(Line& b) const {
+bool Line::isIntersecting(const Line& b) const {
 	auto res = findIntersection(b);
 	return res.isValid();
 }

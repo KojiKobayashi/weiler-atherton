@@ -5,10 +5,10 @@
 namespace  WeilerAthertonAlgorithm {
 	class WeilerAtherton {
 	public:
-        std::list<Polygon> process(Polygon& subject, Polygon& clipping) const;
+        std::list<Polygon> process(const Polygon& subject, const Polygon& clipping) const;
 	private:
-		static Point doWalk(std::list<Point>& enteringPoints, std::list<Point>& exitingPoints, std::list<Point>& walking_points, Polygon& pol, Point& start);
-		double distance(Point p, Point q) const;
-		void addPointInPlace(std::list<Point>& list, const Line& line, const IntersectionPoint& ip) const;
+		static Point doWalk(const std::list<Point>& enteringPoints, const std::list<Point>& exitingPoints, const std::list<Point>& walking_points, const Point& start, Polygon& pol);
+		double distance(const Point& p, const Point& q) const;
+		void addPointInPlace(const Line& line, const IntersectionPoint& ip, std::list<Point>& list) const;
 	};
 }

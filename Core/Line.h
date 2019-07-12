@@ -19,10 +19,10 @@ namespace WeilerAthertonAlgorithm {
 		void A(const Point& p) { _A = p; }
 		void B(const Point& p) { _B = p; }
 		Line(double x1, double y1, double x2, double y2);
-		bool operator ==(Line& l2) const;
+		bool operator ==(const Line& l2) const;
 
-		bool operator !=(Line& l2) const;
-		IntersectionPoint findIntersection(const Line& b) const;
-		bool isIntersecting(Line& b) const;
+		bool operator !=(const Line& l2) const;
+		IntersectionPoint findIntersection(const Line& l) const;
+		bool isIntersecting(const Line& b) const;
 	};
 }
